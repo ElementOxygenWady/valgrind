@@ -139,7 +139,6 @@ add_custom_target(Customize_clean
 
 add_custom_target(Customize_install
     COMMAND "/bin/bash" "${INSTALL_SCRIPT}"
-    COMMAND "${CMAKE_COMMAND}" --build ${CMAKE_BINARY_DIR} --target install
     COMMENT "Running `install` ..."
     VERBATIM
 )
