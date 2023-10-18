@@ -107,10 +107,10 @@ if(ENABLE_CONFIGURE)
     list(APPEND CONFIGURE_COMMAND "--prefix=${CMAKE_INSTALL_PREFIX}")
 
     if(CMAKE_CROSSCOMPILING)
-        if("${PLATFORM}" STREQUAL "SSD20X")
+        if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "armv7-a")
             list(APPEND CONFIGURE_COMMAND "--host=\"armv7-unknown-linux\"")
         else()
-            message(FATAL_ERROR "Unknown platform '${PLATFORM}'.")
+            message(FATAL_ERROR "Unknown system processor '${CMAKE_SYSTEM_PROCESSOR}'")
         endif()
     endif()
 
